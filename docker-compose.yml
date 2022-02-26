@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  flask:
+    build: . 
+    container_name: flask
+    ports:
+      - "8000:8000"
+
+  nginx: 
+    # Since our Dockerfile for web-server is located in react-app foler, our build context is ./react-app
+    build: ./webapp
+    container_name: nginx
+    ports:
+      - "8001:8080"
+
+  db:
+    env_file: credentials/db_credentials.env
+    image: postgres:10
+    container_name: superset_db
+    restart: unless-stopped
+    ports:
+      - "8002:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
