@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+
+  nginx: 
+    build: 
+      context: ./webapp
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./webapp:/app
+      - /app/node_modules
+    container_name: nginx
+    ports:
+      - "8000:8080"
+
+  flask:
+    build: ./server 
+    container_name: flask
+    ports:
+      - "8001:8000"
+

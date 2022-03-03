@@ -25,6 +25,7 @@ def create_sales_table():
 
     create_table(CREATE_TABLE_QUERY)
 
+
 def create_collection_table():
     '''
         Create table for holding full collection with attributes and rank
@@ -49,7 +50,7 @@ def create_collection_table():
     create_table(CREATE_TABLE_QUERY)
     
 
-def insert_calculation(firstNum, secondNum, answer):
+def insert_sale(firstNum, secondNum, answer):
     '''
     Function used to insert our calculation into the DB.
     :param firstNum: first operand of calculation
@@ -73,4 +74,5 @@ def insert_calculation(firstNum, secondNum, answer):
     finally:
         my_connection.close()
         engine.dispose()
+
 

@@ -1,1 +1,3 @@
 credentials
+services/db/data
+**__pycache__

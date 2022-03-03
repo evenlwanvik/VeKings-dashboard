@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, exc
 
 
 def connection_uri():
@@ -6,7 +6,7 @@ def connection_uri():
         Get postgresql connection URI
     :return:
     '''
-    return "blabla"
+    return "postgresql://admin:admin@localhost:8001/vekings"
 
 
 def create_table(query):
